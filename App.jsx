@@ -10,10 +10,10 @@ const ProductsList = () => {
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
 
-    const fetchProducts = async () => {
+    const fetchProducts =  () => {
         const url = `${url}/${company}/categories/${category}/products?top=10&minPrice=1&maxPrice=10000`;
         try {
-            const response = await fetch(url, {
+            const response =  fetch(url, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${acesstkn}`
