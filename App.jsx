@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-const BASE_URL = "http://20.244.56.144/test/companies";
-const ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzIwNzY1OTgzLCJpYXQiOjE3MjA3NjU2ODMsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImI3ZTQwMTc5LWRjZmQtNDlkMC04OTAzLWYwZWI0OTZkYjA5MyIsInN1YiI6InNhbmNoaXRoMTg5NF9iaXQyNUBtZXBjb2VuZy5hYy5pbiJ9LCJjb21wYW55TmFtZSI6Im1lcGNvIiwiY2xpZW50SUQiOiJiN2U0MDE3OS1kY2ZkLTQ5ZDAtODkwMy1mMGViNDk2ZGIwOTMiLCJjbGllbnRTZWNyZXQiOiJJdGZGTHJwSVVTV0dMSU1ZIiwib3duZXJOYW1lIjoiU2FuY2hpdGggUlMiLCJvd25lckVtYWlsIjoic2FuY2hpdGgxODk0X2JpdDI1QG1lcGNvZW5nLmFjLmluIiwicm9sbE5vIjoiMjFCSVQwNDYifQ.Y-EsoBBRmDIGPup0ATgPJLX7XT5im3DBLOGvEZDGBIU";
+const url = "http://20.244.56.144/test/companies";
+const acesstkn = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzIwNzY1OTgzLCJpYXQiOjE3MjA3NjU2ODMsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImI3ZTQwMTc5LWRjZmQtNDlkMC04OTAzLWYwZWI0OTZkYjA5MyIsInN1YiI6InNhbmNoaXRoMTg5NF9iaXQyNUBtZXBjb2VuZy5hYy5pbiJ9LCJjb21wYW55TmFtZSI6Im1lcGNvIiwiY2xpZW50SUQiOiJiN2U0MDE3OS1kY2ZkLTQ5ZDAtODkwMy1mMGViNDk2ZGIwOTMiLCJjbGllbnRTZWNyZXQiOiJJdGZGTHJwSVVTV0dMSU1ZIiwib3duZXJOYW1lIjoiU2FuY2hpdGggUlMiLCJvd25lckVtYWlsIjoic2FuY2hpdGgxODk0X2JpdDI1QG1lcGNvZW5nLmFjLmluIiwicm9sbE5vIjoiMjFCSVQwNDYifQ.Y-EsoBBRmDIGPup0ATgPJLX7XT5im3DBLOGvEZDGBIU";
 const ProductsList = () => {
     const [company, setCompany] = useState('');
     const [category, setCategory] = useState('');
@@ -11,12 +11,12 @@ const ProductsList = () => {
     const [error, setError] = useState(null);
 
     const fetchProducts = async () => {
-        const url = `${BASE_URL}/${company}/categories/${category}/products?top=10&minPrice=1&maxPrice=10000`;
+        const url = `${url}/${company}/categories/${category}/products?top=10&minPrice=1&maxPrice=10000`;
         try {
             const response = await fetch(url, {
                 method: 'GET',
                 headers: {
-                    'Authorization': `Bearer ${ACCESS_TOKEN}`
+                    'Authorization': `Bearer ${acesstkn}`
                 }
             });
 
